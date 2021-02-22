@@ -2,16 +2,20 @@
 
 
 body{
-    background-color: #050505;
+    /* background-color: #050505; */
+	background: url('https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');
+	background-size: 100%;
 	color: white;
 	font-family: 'Lato', sans-serif;
 }
 
 section {
-	background: rgba(255, 255, 255, 0.3);
+	background: rgba(25, 25, 25, 0.5);
 	border-radius: 10px;
 	padding: 2%;
-	margin: 2%;
+	margin: auto;
+	margin-bottom: 1em;
+	max-width: 50%;
 }
 
 #page-title {
