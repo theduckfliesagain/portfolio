@@ -5,34 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/6180fcdf0c.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
 </head>
 
 <body>
+    <header>
+        <h1 id="page-title">Hi, I'm Rishi</h1>
+        <i id="arrow " class="fas fa-chevron-down"></i>
+    </header>
 
-    <h1 id="page-title">Hi, I'm Rishi.</h1>
-
-    <div id="contact-info">
-        <p>rishi_bhugobaun@yahoo.co.uk | 
-        <a href="https://www.linkedin.com/in/rishi-bhugobaun-756387175/"
-                target="_blank">LinkedIn</a> |
-        <a href="https://github.com/theduckfliesagain"
-        target="_blank">Github</a>
-        </p>
-    </div>
-
-
+    <nav>
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
     <section>
+        <a id="about"></a>
         <h2>A bit about me</h2>
+        
         <p>I'm a physics graduate who loves learning new technologies.
             Alongside developing my coding skills in languages such as Python and C#,
             I'd like to learn more web orientated tools such as Javascript and React. </p>
     </section>
 
     <section>
+        <a id="skills"></a>
         <h2>Skills</h2>
+        
         <div class="container">
             <div class="item">
                 <h3 class="skill-title">HTML</h3>
@@ -54,7 +62,7 @@
             </div>
 
         </div>
-        
+
     </section>
 
     <section>
@@ -66,8 +74,11 @@
 
 
     <section>
+        <a id="work"></a>
+        <h2>Work</h2>
+        
         <h2>Current Work</h2>
-
+        
         <ul>
             <li>This website.</li>
         </ul>
@@ -84,6 +95,13 @@
         <p>¯\_(ツ)_/¯</p>
     </section>
 
+    <section >
+        <a id="contact"></a>
+        <p>rishi_bhugobaun@yahoo.co.uk |
+            <a href="https://www.linkedin.com/in/rishi-bhugobaun-756387175/" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/theduckfliesagain" target="_blank">Github</a>
+        </p>
+    </section>
 </body>
 
 </html>
