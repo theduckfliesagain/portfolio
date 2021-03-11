@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/a8912b01-ae78-4f67-a2a3-a5d592ac54e6/deploy-status)](https://app.netlify.com/sites/rishi-bhugobaun/deploys)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"watchify ./index.js -o bundle.js\" \"python -m http.server\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theduckfliesagain/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theduckfliesagain/portfolio/issues"
+  },
+  "homepage": "https://github.com/theduckfliesagain/portfolio#readme",
+  
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "browserify": "^17.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "watchify": "^4.0.0"
+  }
+}
