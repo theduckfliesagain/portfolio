@@ -4,7 +4,7 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/a8912b01-ae78-4f67-a2a3-a5d592ac54e6/deploy-status)](https://app.netlify.com/sites/rishi-bhugobaun/deploys)",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"watchify ./index.js -o bundle.js\" \"python -m http.server\"",
+    "dev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"python -m http.server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

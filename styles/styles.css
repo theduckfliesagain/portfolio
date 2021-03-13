@@ -5,10 +5,17 @@
 *{
 
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
 	scroll-behavior: smooth;
+	width: 100%;
+}
+
+html, body {
+    overflow-x:hidden;
 }
 
 header {
@@ -44,12 +51,13 @@ body{
     background-color: white;
 	/* background: url('https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'); */
 	/* Basic parallax background */
-	
-	background-position: center top;
+	background: rgb(52,52,59);
+	background: linear-gradient(0deg, rgba(52,52,59,1) 0%, rgba(255,255,255,1) 100%);
+	/* background-position: center top;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	
+	 */
 
 	color: rgb(29, 29, 29);
 	font-family: 'Poppins', sans-serif;
@@ -69,7 +77,7 @@ nav > ul {
 	/* grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); */
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -95,27 +103,41 @@ body::-webkit-scrollbar{
 }
 
 main {
-	display: grid;
-	grid-template-columns: 1fr 60vw 1fr;
+	/* display: grid; */
+	/* grid-template-columns: 1fr 60vw 1fr; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 
 section {
-	background: rgba(25, 25, 25, 0.5);
+	/* background: rgba(25, 25, 25, 0.5); */
+	background: #1800cf;
 	color: white;
 	border-radius: 10px;
 	padding: 2em;
-	margin: 1em;
-	grid-column: 2
-	/* max-width: 80%; */
+	margin: auto;
+	margin-top: 2em;
+	/* grid-column: 2; */
+	/* max-width: 60vw; */
 	/* max-width: 50%; */
 }
 
+section > h2 {
+	padding-bottom: 1em;
+}
+
 .container{
-	display: grid;
+	/* display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-template-rows: auto;
-	grid-gap: 1em;
+	grid-gap: 1em; */
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
 }
 
 .item {
@@ -123,6 +145,7 @@ section {
 	color: black;
 	border-radius:  10px;
 	padding: 1rem;
+	margin: auto;
 
 }
 
@@ -154,10 +177,32 @@ section {
 	text-align: center;
 }
 
-@media (max-width:"576px"){
-	body{
+@media only screen and (min-width: 768px){
+	/* body{
 		background-attachment: fixed;
 		background-size: auto;
-	}
+	} */
+
+	/* main {
+		grid-template-columns: 1fr 100vw 1fr;
+	} */
 	
+	section {
+		max-width: 100vw;
+	}
+} 
+
+@media only screen and (min-width: 1336px){
+	/* body{
+		background-attachment: fixed;
+		background-size: auto;
+	} */
+
+	/* main {
+		grid-template-columns: 1fr 100vw 1fr;
+	} */
+	
+	section {
+		max-width: 80vw;
+	}
 } 
