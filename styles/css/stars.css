@@ -1,0 +1,522 @@
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes star-animation-1 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(1) {
+  left: 2%;
+  top: 15%;
+  animation: star-animation-1 2s alternate infinite;
+  opacity: 0.5;
+  transform: scale(0.5);
+  height: 5px;
+  width: 5px;
+  animation-delay: -5s;
+  background: white;
+}
+
+@keyframes star-animation-2 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(2) {
+  left: 45%;
+  top: 89%;
+  animation: star-animation-2 2s alternate infinite;
+  opacity: 0.44;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -10s;
+  background: white;
+}
+
+@keyframes star-animation-3 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(3) {
+  left: 95%;
+  top: 15%;
+  animation: star-animation-3 2s alternate infinite;
+  opacity: 0.78;
+  transform: scale(0.5);
+  height: 3px;
+  width: 3px;
+  animation-delay: -15s;
+  background: white;
+}
+
+@keyframes star-animation-4 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(4) {
+  left: 82%;
+  top: 17%;
+  animation: star-animation-4 2s alternate infinite;
+  opacity: 0.06;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -20s;
+  background: white;
+}
+
+@keyframes star-animation-5 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(5) {
+  left: 60%;
+  top: 20%;
+  animation: star-animation-5 2s alternate infinite;
+  opacity: 0.68;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -25s;
+  background: white;
+}
+
+@keyframes star-animation-6 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(6) {
+  left: 50%;
+  top: 31%;
+  animation: star-animation-6 2s alternate infinite;
+  opacity: 0.9;
+  transform: scale(0.5);
+  height: 3px;
+  width: 3px;
+  animation-delay: -30s;
+  background: white;
+}
+
+@keyframes star-animation-7 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(7) {
+  left: 69%;
+  top: 13%;
+  animation: star-animation-7 2s alternate infinite;
+  opacity: 0.98;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -35s;
+  background: white;
+}
+
+@keyframes star-animation-8 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(8) {
+  left: 67%;
+  top: 65%;
+  animation: star-animation-8 2s alternate infinite;
+  opacity: 0.89;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -40s;
+  background: white;
+}
+
+@keyframes star-animation-9 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(9) {
+  left: 18%;
+  top: 51%;
+  animation: star-animation-9 2s alternate infinite;
+  opacity: 0.32;
+  transform: scale(0.5);
+  height: 5px;
+  width: 5px;
+  animation-delay: -45s;
+  background: white;
+}
+
+@keyframes star-animation-10 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(10) {
+  left: 21%;
+  top: 16%;
+  animation: star-animation-10 2s alternate infinite;
+  opacity: 0.59;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -50s;
+  background: white;
+}
+
+@keyframes star-animation-11 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(11) {
+  left: 48%;
+  top: 15%;
+  animation: star-animation-11 2s alternate infinite;
+  opacity: 0.46;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -55s;
+  background: white;
+}
+
+@keyframes star-animation-12 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(12) {
+  left: 59%;
+  top: 55%;
+  animation: star-animation-12 2s alternate infinite;
+  opacity: 0.06;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -60s;
+  background: white;
+}
+
+@keyframes star-animation-13 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(13) {
+  left: 5%;
+  top: 59%;
+  animation: star-animation-13 2s alternate infinite;
+  opacity: 0.37;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -65s;
+  background: white;
+}
+
+@keyframes star-animation-14 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(14) {
+  left: 53%;
+  top: 8%;
+  animation: star-animation-14 2s alternate infinite;
+  opacity: 0.47;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -70s;
+  background: white;
+}
+
+@keyframes star-animation-15 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(15) {
+  left: 45%;
+  top: 1%;
+  animation: star-animation-15 2s alternate infinite;
+  opacity: 0.6;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -75s;
+  background: white;
+}
+
+@keyframes star-animation-16 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(16) {
+  left: 25%;
+  top: 96%;
+  animation: star-animation-16 2s alternate infinite;
+  opacity: 0.84;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -80s;
+  background: white;
+}
+
+@keyframes star-animation-17 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(17) {
+  left: 90%;
+  top: 82%;
+  animation: star-animation-17 2s alternate infinite;
+  opacity: 0.45;
+  transform: scale(0.5);
+  height: 3px;
+  width: 3px;
+  animation-delay: -85s;
+  background: white;
+}
+
+@keyframes star-animation-18 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(18) {
+  left: 81%;
+  top: 59%;
+  animation: star-animation-18 2s alternate infinite;
+  opacity: 0.51;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -90s;
+  background: white;
+}
+
+@keyframes star-animation-19 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(19) {
+  left: 6%;
+  top: 29%;
+  animation: star-animation-19 2s alternate infinite;
+  opacity: 0.26;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -95s;
+  background: white;
+}
+
+@keyframes star-animation-20 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(20) {
+  left: 75%;
+  top: 71%;
+  animation: star-animation-20 2s alternate infinite;
+  opacity: 0.43;
+  transform: scale(0.5);
+  height: 3px;
+  width: 3px;
+  animation-delay: -100s;
+  background: white;
+}
+
+@keyframes star-animation-21 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(21) {
+  left: 54%;
+  top: 76%;
+  animation: star-animation-21 2s alternate infinite;
+  opacity: 0.77;
+  transform: scale(0.5);
+  height: 5px;
+  width: 5px;
+  animation-delay: -105s;
+  background: white;
+}
+
+@keyframes star-animation-22 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(22) {
+  left: 73%;
+  top: 53%;
+  animation: star-animation-22 2s alternate infinite;
+  opacity: 0.83;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -110s;
+  background: white;
+}
+
+@keyframes star-animation-23 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(23) {
+  left: 64%;
+  top: 91%;
+  animation: star-animation-23 2s alternate infinite;
+  opacity: 0.49;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -115s;
+  background: white;
+}
+
+@keyframes star-animation-24 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(24) {
+  left: 72%;
+  top: 86%;
+  animation: star-animation-24 2s alternate infinite;
+  opacity: 0.79;
+  transform: scale(0.5);
+  height: 5px;
+  width: 5px;
+  animation-delay: -120s;
+  background: white;
+}
+
+@keyframes star-animation-25 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(25) {
+  left: 27%;
+  top: 34%;
+  animation: star-animation-25 2s alternate infinite;
+  opacity: 0.25;
+  transform: scale(0.5);
+  height: 3px;
+  width: 3px;
+  animation-delay: -125s;
+  background: white;
+}
+
+@keyframes star-animation-26 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(26) {
+  left: 9%;
+  top: 60%;
+  animation: star-animation-26 2s alternate infinite;
+  opacity: 0.52;
+  transform: scale(0.5);
+  height: 1px;
+  width: 1px;
+  animation-delay: -130s;
+  background: white;
+}
+
+@keyframes star-animation-27 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(27) {
+  left: 90%;
+  top: 25%;
+  animation: star-animation-27 2s alternate infinite;
+  opacity: 0.28;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -135s;
+  background: white;
+}
+
+@keyframes star-animation-28 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(28) {
+  left: 6%;
+  top: 88%;
+  animation: star-animation-28 2s alternate infinite;
+  opacity: 0.91;
+  transform: scale(0.5);
+  height: 2px;
+  width: 2px;
+  animation-delay: -140s;
+  background: white;
+}
+
+@keyframes star-animation-29 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(29) {
+  left: 61%;
+  top: 74%;
+  animation: star-animation-29 2s alternate infinite;
+  opacity: 0.8;
+  transform: scale(0.5);
+  height: 5px;
+  width: 5px;
+  animation-delay: -145s;
+  background: white;
+}
+
+@keyframes star-animation-30 {
+  100% {
+    transform: scale(1);
+  }
+}
+.star:nth-child(30) {
+  left: 24%;
+  top: 87%;
+  animation: star-animation-30 2s alternate infinite;
+  opacity: 0.84;
+  transform: scale(0.5);
+  height: 4px;
+  width: 4px;
+  animation-delay: -150s;
+  background: white;
+}
+
+/*# sourceMappingURL=stars.css.map */

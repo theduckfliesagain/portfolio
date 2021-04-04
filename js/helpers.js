@@ -13,4 +13,18 @@ function isElementInViewport(el) {
     )
 }
 
-module.exports = {isElementInViewport}
+
+function spanWords(element) {
+  element.innerHTML = element.innerHTML.split(' ')
+      .map(word => `<span>${word}</span>`)
+      .reduce((str, word) => str + " " + word);
+
+  return element.children;
+
+}
+
+
+
+// module.exports = {
+//   spanWords
+// }

@@ -4,7 +4,7 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/a8912b01-ae78-4f67-a2a3-a5d592ac54e6/deploy-status)](https://app.netlify.com/sites/rishi-bhugobaun/deploys)",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"python -m http.server\"",
+    "dev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"python -m http.server\" \"start http://localhost:8000\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,10 +17,10 @@
     "url": "https://github.com/theduckfliesagain/portfolio/issues"
   },
   "homepage": "https://github.com/theduckfliesagain/portfolio#readme",
-  
   "dependencies": {
     "animejs": "^3.2.1",
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
