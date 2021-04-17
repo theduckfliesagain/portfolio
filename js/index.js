@@ -2,11 +2,27 @@ window.addEventListener('load', loadPage, false);
 
 function loadPage() {
     window.location.hash = "";
+    const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
+    console.log(window.matchMedia);
+    document.body.className = userTheme ? "dark" : "light";
 
     renderStars();
     playLoadAnim();
     
     const navbar = document.querySelector('nav');
+    const menu = document.querySelector(".menu");
+
+    menu.addEventListener('click', (e) => {
+        const target = e.target;
+        switch (target.id) {
+            case "theme-switch":
+                target.classList.toggle("rotate");
+                toggleTheme();
+                break;
+            default:
+                break;
+        }
+    })
 
     // Update URL hash
     navbar.addEventListener('click', (e) => {
