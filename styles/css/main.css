@@ -29,13 +29,13 @@ header {
 
 .root {
   transition: all 0.2s;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .dark .root {
   background-color: #181818;
@@ -48,11 +48,12 @@ header {
 
 .menu {
   position: absolute;
-  right: 50px;
-  top: 50px;
+  right: 2%;
+  top: 2%;
   z-index: 2;
 }
 .menu > button {
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.2s;
   background-color: inherit;
   border-radius: 50%;
@@ -70,36 +71,36 @@ header {
 .light .menu > button {
   color: black;
 }
-.menu > button:hover {
-  background-color: grey;
-}
 .menu > button.rotate {
   transform: rotate(180deg);
 }
 
 .container {
-  margin: auto;
   position: relative;
   display: grid;
-  grid-template-columns: 4fr 0.5fr;
+  grid-template-columns: 70vw 1fr;
   border-radius: 10px;
+  min-height: 70vh;
 }
 
 nav {
+  height: 100%;
   grid-column: 2;
   position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  clip-path: inset(0px 0px 0 0);
+  clip-path: inset(-1px -1px);
+  border-radius: 10px;
 }
 nav > button {
+  flex: 1;
   transition: right 0.5s, background-color 0.5s;
   position: relative;
   background-color: #191919;
   color: white;
-  padding: 2em;
+  padding: 1em;
+  font-size: 100%;
   text-align: center;
   outline: none;
   border: none;
@@ -124,28 +125,31 @@ nav > button:last-child {
 .light nav > button.active {
   background: #10199b;
 }
+nav > button > i {
+  float: left;
+  margin-right: 10px;
+}
 
 main {
+  grid-column: 1;
   position: relative;
-  clip-path: inset(0 0);
+  clip-path: inset(0px -10px);
   border-radius: 10px 0 0 10px;
 }
 
 section {
-  grid-column: 1;
   display: block;
   position: absolute;
   left: 101%;
   height: 100%;
   width: 100%;
   transition: left 0.5s, opacity 0.5s;
-  /* opacity: 0; */
   border-radius: 10px 0 0 10px;
   padding: 2em;
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: min(1em, 5vw);
+  font-size: 0.8em;
   line-height: 1.5em;
 }
 section::-webkit-scrollbar {
@@ -180,7 +184,6 @@ section::-webkit-scrollbar-thumb {
 section.active {
   left: 0;
   opacity: 1;
-  /* display: block; */
 }
 section > h2 {
   margin-bottom: 1em;
@@ -190,6 +193,65 @@ section > p {
   margin-bottom: 0.5em;
 }
 
+@media only screen and (max-width: 768px) {
+  .root {
+    align-items: flex-end;
+  }
+
+  .container {
+    width: 90vw;
+    height: 90vh;
+    bottom: 0;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 100px;
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 1;
+    clip-path: inset(-10px 0px);
+  }
+
+  section {
+    height: 105%;
+    transition: top 0.5s, opacity 0.5s;
+    left: inherit;
+    top: 101%;
+    word-wrap: break-word;
+    border-radius: 10px 10px 0 0;
+  }
+  section.active {
+    left: inherit;
+    top: 0;
+    opacity: 1;
+  }
+
+  nav {
+    grid-column: 1;
+    grid-row: 2;
+    flex-direction: row;
+    font-size: 2vw;
+  }
+  nav > button:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 10px;
+  }
+  nav > button:last-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 10px;
+  }
+  nav > button * {
+    pointer-events: none;
+  }
+  nav > button > i {
+    float: unset;
+    margin: unset;
+    font-size: 2em;
+  }
+  nav > button > span.mobile-hide {
+    display: none;
+  }
+}
 .item-container {
   /* position: absolute; */
   display: flex;
@@ -198,7 +260,7 @@ section > p {
 }
 
 .item {
-  min-width: 40%;
+  min-width: 300px;
   border-radius: 10px;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
   padding: 0.8em;
@@ -261,6 +323,9 @@ section > p {
 .contact ul {
   list-style: none;
 }
+.contact ul li {
+  vertical-align: middle;
+}
 .contact ul li i {
   width: 24px;
 }
@@ -276,6 +341,11 @@ section > p {
 }
 .contact ul li a:hover {
   color: grey;
+}
+
+.break {
+  content: "\a";
+  white-space: pre;
 }
 
 .express {

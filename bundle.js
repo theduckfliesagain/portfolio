@@ -1,4 +1,27 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+function spanWords(element) {
+  element.innerHTML = element.innerHTML.split(' ')
+      .map(word => `<span>${word}</span>`)
+      .reduce((str, word) => str + " " + word);
+
+  return element.children;
+
+}
+
+function toggleTheme() {
+  const currentTheme = document.body.className;
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  document.body.className = newTheme;
+}
+
+
+module.exports = {spanWords, toggleTheme}
+
+
+
+},{}],2:[function(require,module,exports){
+const helpers = require('./helpers');
+
 window.addEventListener('load', loadPage, false);
 
 function loadPage() {
@@ -6,7 +29,7 @@ function loadPage() {
     const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
     console.log(window.matchMedia);
     document.body.className = userTheme ? "dark" : "light";
-
+    
     renderStars();
     playLoadAnim();
     
@@ -18,7 +41,7 @@ function loadPage() {
         switch (target.id) {
             case "theme-switch":
                 target.classList.toggle("rotate");
-                toggleTheme();
+                helpers.toggleTheme();
                 break;
             default:
                 break;
@@ -27,7 +50,10 @@ function loadPage() {
 
     // Update URL hash
     navbar.addEventListener('click', (e) => {
-        const selectedBtn = e.target;
+        const selectedBtn = e.target instanceof HTMLButtonElement 
+        ? e.target
+        : e.target.parentElement;
+        
         window.location.hash = selectedBtn.classList.contains("active") 
                              ? "" : selectedBtn.classList[0];
     })
@@ -61,7 +87,7 @@ function renderStars() {
 function playLoadAnim() {
     
     let pageTitle = document.getElementById('page-title');
-    pageTitle = spanWords(pageTitle)
+    pageTitle = helpers.spanWords(pageTitle)
 
     const navbar = document.querySelector('nav');
     const navWidth = navbar.offsetWidth;
@@ -88,4 +114,4 @@ function playLoadAnim() {
 }
 
 
-},{}]},{},[1]);
+},{"./helpers":1}]},{},[2]);
