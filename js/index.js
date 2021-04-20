@@ -1,3 +1,5 @@
+const helpers = require('./helpers');
+
 window.addEventListener('load', loadPage, false);
 
 function loadPage() {
@@ -17,7 +19,7 @@ function loadPage() {
         switch (target.id) {
             case "theme-switch":
                 target.classList.toggle("rotate");
-                toggleTheme();
+                helpers.toggleTheme();
                 break;
             default:
                 break;
@@ -63,7 +65,7 @@ function renderStars() {
 function playLoadAnim() {
     
     let pageTitle = document.getElementById('page-title');
-    pageTitle = spanWords(pageTitle)
+    pageTitle = helpers.spanWords(pageTitle)
 
     const navbar = document.querySelector('nav');
     const navWidth = navbar.offsetWidth;
