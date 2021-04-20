@@ -5,7 +5,7 @@ function loadPage() {
     const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
     console.log(window.matchMedia);
     document.body.className = userTheme ? "dark" : "light";
-
+    
     renderStars();
     playLoadAnim();
     
@@ -26,7 +26,10 @@ function loadPage() {
 
     // Update URL hash
     navbar.addEventListener('click', (e) => {
-        const selectedBtn = e.target;
+        const selectedBtn = e.target instanceof HTMLButtonElement 
+        ? e.target
+        : e.target.parentElement;
+        
         window.location.hash = selectedBtn.classList.contains("active") 
                              ? "" : selectedBtn.classList[0];
     })
