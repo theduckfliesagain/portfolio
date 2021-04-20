@@ -219,6 +219,7 @@ section {
         grid-column: 1;
         grid-row: 1;
         clip-path: inset(-10px 0px);
+        // font-size: 0.8em;
     }
 
     section {
@@ -226,7 +227,7 @@ section {
         transition: top 0.5s, opacity 0.5s;
         left: inherit;
         top: 101%;
-        font-size: 0.8em;
+ 
         word-wrap: break-word;
         border-radius: $border-rounding $border-rounding 0 0;
         &.active {
@@ -352,6 +353,7 @@ section {
     ul {
         list-style: none;
         li {
+            vertical-align: middle;
             i {
                 width: 24px;
             }
@@ -368,6 +370,11 @@ section {
             }
         }
     }
+}
+
+.break {
+    content:"\A";
+    white-space:pre;
 }
 
 .express {
