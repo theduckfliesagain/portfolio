@@ -9,7 +9,7 @@ $nav-width: 200px;
 // $bg: rgb(15, 15, 15);
 $border-rounding: 10px;
 $item-font-size: 0.8em;
-
+$tablet: 768px;
 
 @mixin custom-scrollbar() {
     &::-webkit-scrollbar {
@@ -26,10 +26,8 @@ $item-font-size: 0.8em;
 
         &:hover {
             @include theme() {
-                // color: t($text);
                 background: color.scale(t($bg-3), $lightness: 20%);
             }
-            // background: $section-light
         }
     }
 }
@@ -41,14 +39,13 @@ $item-font-size: 0.8em;
 }
 
 html, body {
-    overflow: hidden;
+    overflow: hidden ;
     min-height: 100%;
 }
 
 header {
     position: absolute;
     left: 10%;
-    // color: rgb(255, 255, 255);
 }
 
 #page-title {
@@ -61,18 +58,17 @@ header {
     }
 }
 
-
 .root {
     transition: all 0.2s;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
 
     font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
-    
+    font-size: 2rem;
+
     @include theme() {
         background-color: t($bg-1);
         color: t($text-color);
@@ -81,13 +77,14 @@ header {
 
 .menu {
     position: absolute;
-    right: 50px;
-    top: 50px;
+    right: 2%;
+    top: 2%;
     z-index: 2;
     > button {
         @include theme() {
             color: t($text-color);
         }
+        -webkit-tap-highlight-color: transparent;
         transition: all 0.2s;
         background-color: inherit;
         border-radius: 50%;
@@ -99,9 +96,6 @@ header {
         font-size: 30px;
         cursor: pointer;
 
-        &:hover {
-            background-color: grey;
-        }
         &.rotate {
             transform: rotate(180deg);
         }
@@ -109,30 +103,32 @@ header {
 }
 
 .container {
-    margin: auto;
     position: relative;
     display: grid;
-    grid-template-columns: 4fr 0.5fr;
+    grid-template-columns: 70vw 1fr;
     border-radius: $border-rounding;
-    // box-shadow: 0 0 4px 8px color.scale($bg, $lightness: -10%);
-    // min-width: 100%;
+    min-height: 70vh;
 }
 
 nav {
+    height: 100%;
     grid-column: 2;
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    clip-path: inset(0px 0px 0 0);
+    // justify-content: center;
+    clip-path: inset(-1px -1px);
+    border-radius: $border-rounding;
 
     > button {
+        flex: 1;
         transition: right 0.5s, background-color 0.5s;
         position: relative;
         background-color: rgba(25, 25, 25);
         color: white;
-        padding: 2em;
+        padding: 1em;
+        font-size: 100%;
         text-align: center;
         outline: none;
         border: none;
@@ -155,13 +151,19 @@ nav {
                 background: t($bg-2);
             }
         }
+
+        > i {
+            float: left;
+            margin-right: 10px;
+        }
     }
 }
 
 main {
+    grid-column: 1;
+    // width: 100%;
     position: relative;
-    clip-path: inset(0 0);
-    // background-color: $background-light;
+    clip-path: inset(0px -10px);
     border-radius: $border-rounding 0 0 $border-rounding;
 }
 
@@ -171,29 +173,25 @@ section {
         color: t($text-2);
         background: t($bg-2);
     }
-
-    grid-column: 1;
+    // visibility: hidden;
     display: block;
     position: absolute;
     left: 101%;
     height: 100%;
     width: 100%;
     transition: left 0.5s, opacity 0.5s;
-    /* opacity: 0; */
-    // background: $section-color;
-    // color: white;
     border-radius: $border-rounding 0 0 $border-rounding;
     padding: 2em;
     z-index: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-size: min(1em, 5vw);
+    font-size: 0.8em;
     line-height: 1.5em;
 
     &.active {
+        // visibility: visible;
         left: 0;
         opacity: 1;
-        /* display: block; */
     }
 
     > h2 {
@@ -203,6 +201,73 @@ section {
     > p {
         position: relative;
         margin-bottom: 0.5em;
+    }
+}
+
+@media only screen and (max-width: $tablet) {
+    .root {
+        align-items: flex-end;
+    }
+    .container {
+        width: 90vw;
+        height: 90vh;
+        bottom: 0;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 100px;
+    }
+    main {
+        grid-column: 1;
+        grid-row: 1;
+        clip-path: inset(-10px 0px);
+        // font-size: 0.8em;
+    }
+
+    section {
+        height: 105%;
+        transition: top 0.5s, opacity 0.5s;
+        left: inherit;
+        top: 101%;
+ 
+        word-wrap: break-word;
+        border-radius: $border-rounding $border-rounding 0 0;
+        &.active {
+            left: inherit;
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    nav {
+        grid-column: 1;
+        grid-row: 2;
+        flex-direction: row;
+        font-size: 2vw;
+        > button {
+            &:first-child {
+                border-top-right-radius: 0;
+                border-top-left-radius: $border-rounding;
+            }
+            &:last-child {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: $border-rounding;
+            }
+
+            * {
+                pointer-events: none;
+            }
+
+            > i {
+                float: unset;
+                margin: unset;
+                font-size: 2em;
+            }
+
+            > span {
+                &.mobile-hide {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -218,9 +283,7 @@ section {
         color: t($text-2);
         background: t($bg-3);
     }
-    min-width: 40%;
-    // background-color: $section-light;
-    // color: rgb(243, 243, 243);
+    min-width: 300px;
     border-radius: $border-rounding;
     box-shadow: 0 0 8px 4px rgb(0, 0, 0, 0.1);
     padding: $item-font-size;
@@ -290,6 +353,7 @@ section {
     ul {
         list-style: none;
         li {
+            vertical-align: middle;
             i {
                 width: 24px;
             }
@@ -297,7 +361,7 @@ section {
                 margin-left: 1em;
                 text-decoration: none;
                 @include theme() {
-                    color: t($text-2);    
+                    color: t($text-2);
                 }
 
                 &:hover {
@@ -306,6 +370,11 @@ section {
             }
         }
     }
+}
+
+.break {
+    content:"\A";
+    white-space:pre;
 }
 
 .express {

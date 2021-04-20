@@ -1,3 +1,5 @@
+const helpers = require('./helpers');
+
 window.addEventListener('load', loadPage, false);
 
 function loadPage() {
@@ -5,7 +7,7 @@ function loadPage() {
     const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
     console.log(window.matchMedia);
     document.body.className = userTheme ? "dark" : "light";
-
+    
     renderStars();
     playLoadAnim();
     
@@ -17,7 +19,7 @@ function loadPage() {
         switch (target.id) {
             case "theme-switch":
                 target.classList.toggle("rotate");
-                toggleTheme();
+                helpers.toggleTheme();
                 break;
             default:
                 break;
@@ -26,7 +28,10 @@ function loadPage() {
 
     // Update URL hash
     navbar.addEventListener('click', (e) => {
-        const selectedBtn = e.target;
+        const selectedBtn = e.target instanceof HTMLButtonElement 
+        ? e.target
+        : e.target.parentElement;
+        
         window.location.hash = selectedBtn.classList.contains("active") 
                              ? "" : selectedBtn.classList[0];
     })
@@ -60,7 +65,7 @@ function renderStars() {
 function playLoadAnim() {
     
     let pageTitle = document.getElementById('page-title');
-    pageTitle = spanWords(pageTitle)
+    pageTitle = helpers.spanWords(pageTitle)
 
     const navbar = document.querySelector('nav');
     const navWidth = navbar.offsetWidth;

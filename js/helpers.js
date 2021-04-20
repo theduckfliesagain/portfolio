@@ -13,3 +13,7 @@ function toggleTheme() {
   document.body.className = newTheme;
 }
 
+
+module.exports = {spanWords, toggleTheme}
+
+

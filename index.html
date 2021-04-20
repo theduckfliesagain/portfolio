@@ -15,10 +15,11 @@
         integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
         crossorigin="anonymous"></script>
     <!-- SCRIPTS -->
-    <script src="./js/helpers.js"></script>
-    <script src="./js/github.js"></script>
+    <!-- <script src="./js/helpers.js"></script> -->
+    <!-- <script src="./js/github.js"></script> -->
     <!-- <script defer src="./js/animations.js"></script> -->
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script defer src="bundle.js"></script>
     <title>Portfolio</title>
 </head>
 
@@ -148,7 +149,7 @@
                         <li>
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:rishi_bhugobaun@yahoo.co.uk">
-                                rishi_bhugobaun@yahoo.co.uk
+                                rishi_bhugobaun<span class="break">@yahoo.co.uk</span>
                             </a>
                         </li>
                         <li>
@@ -165,10 +166,22 @@
             </main>
 
             <nav>
-                <button class="about">ABOUT</button>
-                <button class="skills">SKILLS</button>
-                <button class="work">WORK</button>
-                <button class="contact">CONTACT</button>
+                <button class="about">
+                    <i class="fas fa-user"></i>
+                    <span class="mobile-hide">ABOUT</span>
+                </button>
+                <button class="skills">
+                    <i class="fas fa-tools"></i>
+                    <span class="mobile-hide">SKILLS</span>
+                </button>
+                <button class="work">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="mobile-hide">WORK</span>
+                </button>
+                <button class="contact">
+                    <i class="fas fa-address-card"></i>
+                    <span class="mobile-hide">CONTACT</span> 
+                </button>
             </nav>
         </div>
     </div>
