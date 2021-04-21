@@ -108,6 +108,7 @@ header {
     grid-template-columns: 70vw 1fr;
     border-radius: $border-rounding;
     min-height: 70vh;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.075);
 }
 
 nav {
@@ -120,12 +121,13 @@ nav {
     // justify-content: center;
     clip-path: inset(-1px -1px);
     border-radius: $border-rounding;
+    
 
     > button {
         flex: 1;
         transition: right 0.5s, background-color 0.5s;
         position: relative;
-        background-color: rgba(25, 25, 25);
+        background-color: rgb(37, 37, 37);
         color: white;
         padding: 1em;
         font-size: 100%;
@@ -161,7 +163,7 @@ nav {
 
 main {
     grid-column: 1;
-    // width: 100%;
+    background-color: rgba(131, 131, 131, 0.034);
     position: relative;
     clip-path: inset(0px -2px);
     border-radius: $border-rounding 0 0 $border-rounding;
