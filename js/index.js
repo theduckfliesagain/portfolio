@@ -4,13 +4,11 @@ const helpers = require('./helpers');
 loadPage()
 function loadPage() {
     
-    const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
-    console.log(window.matchMedia);
+    const userTheme = window.matchMedia('(prefers-color-scheme: dark').matches;
     document.body.className = userTheme ? "dark" : "light";
     
     renderStars();
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
-    console.log(visited);
     !visited && playLoadAnim();
     renderSection();
 
@@ -92,7 +90,7 @@ function playLoadAnim() {
     })
     .add({
         targets: 'nav>button',
-        translateX: [-navWidth-10,0],
+        translateX: [-navWidth-50,0],
 
         delay: anime.stagger(200),
     })
