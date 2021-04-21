@@ -1,16 +1,21 @@
 const helpers = require('./helpers');
 
-window.addEventListener('load', loadPage, false);
-
+// window.addEventListener('load', loadPage, false);
+loadPage()
 function loadPage() {
-    window.location.hash = "";
+    
     const userTheme = window.matchMedia("(prefers-color-theme: dark)").matches;
     console.log(window.matchMedia);
     document.body.className = userTheme ? "dark" : "light";
     
     renderStars();
-    playLoadAnim();
-    
+    let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
+    console.log(visited);
+    !visited && playLoadAnim();
+    renderSection();
+
+    document.cookie = "visited=true;"
+
     const navbar = document.querySelector('nav');
     const menu = document.querySelector(".menu");
 
@@ -37,17 +42,21 @@ function loadPage() {
     })
     // Open/close sections based on has change
     window.addEventListener('hashchange', (e) => {
-        const activeElements = [...document.getElementsByClassName("active")];
-        if (activeElements) {
-            activeElements.forEach(element => {
-                element.classList.toggle("active");
-            })
-        }
-        const newElements = [...document.getElementsByClassName(window.location.hash.substring(1))];
-        newElements.forEach(element => {
+      renderSection();
+
+    })
+}
+
+function renderSection () {
+    const activeElements = [...document.getElementsByClassName("active")];
+    if (activeElements) {
+        activeElements.forEach(element => {
             element.classList.toggle("active");
         })
-
+    }
+    const newElements = [...document.getElementsByClassName(window.location.hash.substring(1))];
+    newElements.forEach(element => {
+        element.classList.toggle("active");
     })
 }
 
