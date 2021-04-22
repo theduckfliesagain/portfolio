@@ -2,10 +2,10 @@ const helpers = require('./helpers');
 
 loadPage()
 function loadPage() {
-    
+
     const userTheme = window.matchMedia('(prefers-color-scheme: dark').matches;
     document.body.className = userTheme ? "dark" : "light";
-    
+
     renderStars();
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
     !visited && playLoadAnim();
@@ -23,6 +23,11 @@ function loadPage() {
                 target.classList.toggle("rotate");
                 helpers.toggleTheme();
                 break;
+            case "anim-switch":
+                document.body.classList.toggle("no-anim");
+                target.classList.toggle("fa-stop-circle")
+                target.classList.toggle("fa-play-circle")
+                break;
             default:
                 break;
         }
@@ -30,21 +35,21 @@ function loadPage() {
 
     // Update URL hash
     navbar.addEventListener('click', (e) => {
-        const selectedBtn = e.target instanceof HTMLButtonElement 
-        ? e.target
-        : e.target.parentElement;
-        
-        window.location.hash = selectedBtn.classList.contains("active") 
-                             ? "" : selectedBtn.classList[0];
+        const selectedBtn = e.target instanceof HTMLButtonElement
+            ? e.target
+            : e.target.parentElement;
+
+        window.location.hash = selectedBtn.classList.contains("active")
+            ? "" : selectedBtn.classList[0];
     })
     // Open/close sections based on has change
     window.addEventListener('hashchange', (e) => {
-      renderSection();
+        renderSection();
 
     })
 }
 
-function renderSection () {
+function renderSection() {
     const activeElements = [...document.getElementsByClassName("active")];
     if (activeElements) {
         activeElements.forEach(element => {
@@ -69,7 +74,7 @@ function renderStars() {
 }
 
 function playLoadAnim() {
-    
+
     let pageTitle = document.getElementById('page-title');
     pageTitle = helpers.spanWords(pageTitle)
 
@@ -81,18 +86,18 @@ function playLoadAnim() {
         easing: 'easeOutCubic',
         duration: 600
     })
-    .add({
-        targets: pageTitle,
-        translateX: [500, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(200),
-    })
-    .add({
-        targets: 'nav>button',
-        translateX: [-navWidth-50,0],
+        .add({
+            targets: pageTitle,
+            translateX: [500, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+        })
+        .add({
+            targets: 'nav>button',
+            translateX: [-navWidth - 50, 0],
 
-        delay: anime.stagger(200),
-    })
+            delay: anime.stagger(200),
+        })
 
     tl.play();
 }
