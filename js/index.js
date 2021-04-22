@@ -1,6 +1,5 @@
 const helpers = require('./helpers');
 
-// window.addEventListener('load', loadPage, false);
 loadPage()
 function loadPage() {
     
@@ -12,7 +11,7 @@ function loadPage() {
     !visited && playLoadAnim();
     renderSection();
 
-    document.cookie = "visited=true;"
+    document.cookie = "visited=true;SameSite=Lax"
 
     const navbar = document.querySelector('nav');
     const menu = document.querySelector(".menu");
