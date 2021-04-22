@@ -5,58 +5,198 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Portfolio</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./styles/css/main.css">
+    <!-- ICONS -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/6180fcdf0c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous"></script>
+    <script defer src="bundle.js"></script>
+    <title>Rishi B - Portfolio</title>
 </head>
 
 <body>
+    <div id="root">
+        <div class="menu">
+            <button id="theme-switch" class="fas fa-adjust"></button>
+            <button id="anim-switch" class="fas fa-stop-circle"></button>
+            <!-- <button id="anim-switch" class="fas fa-stop-circle"></button> -->
+        </div>
 
-    <h1 id="page-title">Hi, I'm Rishi.</h1>
+        <div class="stars">
 
-    <div id="contact-info">
-        <p>rishi_bhugobaun@yahoo.co.uk | 
-        <a href="https://www.linkedin.com/in/rishi-bhugobaun-756387175/"
-                target="_blank">LinkedIn</a> |
-        <a href="https://github.com/theduckfliesagain"
-        target="_blank">Github</a>
-        </p>
+        </div>
+
+        <div class="container">
+            <main>
+                <header class="intro">
+                    <h1 id="page-title">Hi, <br> I'm Rishi</h1>
+                </header>
+
+                <section class="about">
+                    <a></a>
+                    <h2>A bit about me</h2>
+                    <p>
+                        Hey there! I'm a physics graduate who loves learning new technologies. I'm currently training to
+                        be a full stack developer with futureproof, where I've been learning things like Javascript, SQL and     NoSQL Databases, React and lots of others.
+                    </p>
+                    <br>
+                    <p>
+                        Other interests of mine include creating visual effects for my (ridiculous) short films, and
+                        anything to do with space - science missions, industry developments, and of course sci-fi films, tv
+                        and books!
+                    </p>
+                </section>
+
+                <section class="skills">
+                    <a></a>
+                    <h2>Skills</h2>
+                    <p>
+                        I'm always looking to learn new things to widen my skillset, but here are some of software and
+                        technologies I've had experience with (programming and otherwise!).
+                    </p>
+                    <br>
+                    <div class="item-container">
+                        <div class="item">
+                            <h3 class="skill-title">Front End</h3>
+                            <p> <i class="fab fa-html5"></i> HTML</p>
+                            <p> <i class="fab fa-css3-alt"></i> CSS</p>
+                            <p> <i class="fab fa-js"></i> JS</p>
+                            <p> <i class="fab fa-react"></i> React</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="skill-title">Back End</h3>
+                            <p> <i class="fab fa-node-js"></i> Node.js</p>
+                            <p> <i class="express"></i> Express.js</p>
+                            <p> <img src="https://img.icons8.com/material/24/ffffff/postgreesql.png" /> PostgreSQL</p>
+                            <p> <i class="fas fa-database"></i> MongoDB</p>
+                            <p> <img src="https://img.icons8.com/ios-filled/24/ffffff/c-sharp-logo.png" /> C#</p>
+                            <p> <i class="fab fa-python"></i> Python</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="skill-title">Other</h3>
+                            <p><img src="https://img.icons8.com/ios/24/ffffff/adobe-creative-cloud.png" /> Adobe Suite
+                            </p>
+                            <p><img src="https://img.icons8.com/ios-filled/24/ffffff/blender-3d.png" /> Blender </p>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="work">
+                    <h2>Recent Projects</h2>
+
+                    <p>Here are some of things I've worked on recently while training at futureproof!</p>
+
+                    <div class="item-container">
+                        <div class="item project">
+                            <h3>Habit&eacute
+                                <a class="icon github" href="https://github.com/theduckfliesagain/co-habiters"
+                                    target="_blank"></a>
+                            </h3>
+
+                            <div class="content">
+                                <video autoplay muted loop
+                                        src="https://thumbs.gfycat.com/PowerfulCheapInchworm-mobile.mp4" alt="Habit&eacute in use"></video>
+                                <a href="https://habite.netlify.app/" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                           
+                            <p>A mobile friendly web-app that allows users to register for their own account. They can easily log and record their progress for any habits they wish to track, mark habits as complete for the day, and see their most recent completion streaks. The data is persisted in a Postgres Database connected to Heroku.</p>
+                        </div>
+                        <div class="item project">
+                            <h3>Consoul.log
+                                <a class="icon github" href="https://github.com/theduckfliesagain/consoul.log"
+                                    target="_blank"></a>
+                            </h3>
+                            
+                            <div class="content">
+                                <video autoplay muted loop
+                                        src="https://thumbs.gfycat.com/JovialShyCottontail-mobile.mp4" alt="Consoul.log in use"></video>
+                                <a href="https://consoul-log.netlify.app/" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <p>An anonymous commmunity journaling platform for tech nerds. Built using HTML, CSS and
+                                Node.js
+                                with and Express.js backend that saves data to a json file.</p>
+                        </div>
+                    </div>
+
+                    <h2>Past experience</h2>
+                    <div class="item-container">
+                        <div class="item work experience grow">
+                            <h3>WMG Visualisation Department
+                                <span>Research Intern</span>
+                            </h3>
+                            <ul>
+                                <li>Development of a virtual reality application using the Unity game engine and C# to aid research into frame rate and resolution when using head mounted displays</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Education</h2>
+                    <div class="item-container">
+                        <div class="item work education grow">
+                            <h3>University of Warwick
+                                <span> Physics MPhys (Hons), First Class</span>
+                            </h3>
+                            <ul>
+                                <li>Additional modules including Particle Physics, Astronomy and Computational Physics
+                                    (Python and C)</li>
+                                <li>Masters: processing stellar X-ray data from space telescopes using Python.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact">
+                    <h2>Contact</h2>
+                    <div class="contact"></div>
+                    <ul>
+                        <li>
+                            
+                            <a href="mailto:rishi_bhugobaun@yahoo.co.uk">
+                                <i class="fas fa-envelope"></i>rishi_bhugobaun<span class="break">@yahoo.co.uk</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/rishi-bhugobaun-756387175/" target="_blank">
+                                <i class="fab fa-linkedin"></i>LinkedIn</a>
+                        </li>
+                        <li>
+                            
+                            <a href="https://github.com/theduckfliesagain" target="_blank">
+                                <i class="fab fa-github"></i>Github</a>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+
+            <nav>
+                <button class="about">
+                    <i class="fas fa-user"></i>
+                    <span class="mobile-hide">ABOUT</span>
+                </button>
+                <button class="skills">
+                    <i class="fas fa-tools"></i>
+                    <span class="mobile-hide">SKILLS</span>
+                </button>
+                <button class="work">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="mobile-hide">WORK</span>
+                </button>
+                <button class="contact">
+                    <i class="fas fa-address-card"></i>
+                    <span class="mobile-hide">CONTACT</span> 
+                </button>
+            </nav>
+        </div>
     </div>
-
-
-
-    <section>
-        <h3>A bit about me</h3>
-        <p>I'm a physics graduate who loves learning new technologies.
-            Alongside developing my coding skills in languages such as Python and C#,
-            I'd like to learn more web orientated tools such as Javascript and React. </p>
-    </section>
-
-    <section>
-        <h3>Things people definitely said about me</h3>
-        <blockquote>
-            "Rishi is 100% human, not a robot."
-        </blockquote>
-    </section>
-
-
-    <section>
-        <h3>Current Work</h3>
-
-        <ul>
-            <li>This website.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>Previous Work</h3>
-
-    </section>
-
-    <section>
-        <h3>Future Work</h3>
-
-        <p>¯\_(ツ)_/¯</p>
-    </section>
 
 </body>
 

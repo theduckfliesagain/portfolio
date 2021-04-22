@@ -1,0 +1,5 @@
+node_modules
+.vscode
+bundle.js
+scripts/sass.sh
+**/*.css.map
