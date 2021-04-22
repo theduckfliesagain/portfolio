@@ -48,6 +48,13 @@ header {
     left: 10%;
 }
 
+body.no-anim *{
+    -webkit-transition:none !important;
+    -moz-transition:none !important;
+    -o-transition:none !important;
+    transition:none !important;
+}
+
 #page-title {
     position: absolute;
     font-size: 6rem;
@@ -58,7 +65,7 @@ header {
     }
 }
 
-.root {
+#root {
     transition: all 0.2s;
     min-height: 100vh;
     display: flex;
@@ -95,10 +102,15 @@ header {
         outline: none;
         font-size: 30px;
         cursor: pointer;
-
+        
+        &:hover {
+            transform: scale(1.2);
+        }
         &.rotate {
             transform: rotate(180deg);
         }
+
+
     }
 }
 
