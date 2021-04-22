@@ -8,9 +8,8 @@ function spanWords(element) {
 }
 
 function toggleTheme() {
-  const currentTheme = document.body.className;
-  const newTheme = currentTheme === "light" ? "dark" : "light";
-  document.body.className = newTheme;
+  document.body.classList.toggle("dark")
+  document.body.classList.toggle("light")
 }
 
 
