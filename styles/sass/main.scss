@@ -1,5 +1,6 @@
 @use "sass:color";
 @import "themes";
+@import "stars";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
@@ -49,10 +50,8 @@ header {
 }
 
 body.no-anim *{
-    -webkit-transition:none !important;
-    -moz-transition:none !important;
-    -o-transition:none !important;
     transition:none !important;
+    animation: none !important;
 }
 
 #page-title {
