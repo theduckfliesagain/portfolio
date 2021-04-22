@@ -39,7 +39,7 @@ $tablet: 768px;
 }
 
 html, body {
-    overflow: hidden ;
+    overflow: hidden;
     min-height: 100%;
 }
 
@@ -121,7 +121,6 @@ nav {
     // justify-content: center;
     clip-path: inset(-1px -1px);
     border-radius: $border-rounding;
-    
 
     > button {
         flex: 1;
@@ -197,7 +196,8 @@ section {
     }
 
     > h2 {
-        margin-bottom: 1em;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     > p {
@@ -205,7 +205,6 @@ section {
         margin-bottom: 0.5em;
     }
 }
-
 
 .item-container {
     /* position: absolute; */
@@ -228,6 +227,7 @@ section {
 
     &.grow {
         flex-grow: 1;
+        max-width: 100%;
     }
 
     > h3 {
@@ -257,23 +257,46 @@ section {
     }
 }
 
-.project {
+.content {
+    transition: all 0.5s;
+    max-width: 100%;
+    display: block;
+    position: relative;
+    margin: 15px auto;
+    video {
+        display: block;
+        width: 100%;
+        border-radius: $border-rounding;
+    }
     a {
         text-decoration: none;
-        color: inherit;
-
-        video {
-            border-radius: $border-rounding;
-            width: 100%;
-            margin-bottom: $item-font-size;
-            /* box-shadow: 0 0 4px 5px $section-color); */
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: white;
+    }
+    &:hover {
+        a {
+            background-color: rgba(22, 22, 22, 0.418);
+            opacity: 1;
         }
+
+        transform: scale(1.1);
     }
 }
 
-.education {
+.work {
     h3 > span {
+        margin-left: 0.2em;
         font-weight: lighter;
+        font-size: 80%;
     }
 
     ul {
@@ -296,7 +319,6 @@ section {
                 margin-right: 1em;
             }
             a {
-                
                 text-decoration: none;
                 @include theme() {
                     color: t($text-2);
@@ -311,8 +333,8 @@ section {
 }
 
 .break {
-    content:"\A";
-    white-space:pre;
+    content: "\A";
+    white-space: pre;
 }
 
 .express {
@@ -369,7 +391,7 @@ section {
         transition: top 0.5s, opacity 0.5s;
         left: inherit;
         top: 101%;
- 
+
         word-wrap: break-word;
         border-radius: $border-rounding $border-rounding 0 0;
         &.active {
@@ -377,6 +399,10 @@ section {
             top: 0;
             opacity: 1;
         }
+    }
+
+    .item {
+        max-width: 100%;
     }
 
     nav {
