@@ -1,3 +1,4 @@
+require('particles.js/particles')
 const anime = require('animejs');
 const helpers = require('./helpers');
 const github = require('./github');
@@ -113,7 +114,7 @@ function renderStars() {
 }
 
 function renderPoly() {
-    window.particlesJS.load('particles-js', './js/particles.json', function() {
+    particlesJS.load('particles-js', './js/particles.json', function() {
         console.log('loaded');
       });
 }
