@@ -181,9 +181,9 @@ button {
         border-radius: 1000px;
         padding: 10px;
 
-        @include theme() {
-            background-color: t($bg-1);
-        }
+        // @include theme() {
+        //     background-color: t($bg-1);
+        // }
 
         > button {
             @include theme() {
