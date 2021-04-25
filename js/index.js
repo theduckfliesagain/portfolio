@@ -1,4 +1,3 @@
-let particlesJS;
 const anime = require('animejs');
 const helpers = require('./helpers');
 const github = require('./github');
@@ -121,8 +120,9 @@ function renderPoly() {
 
 function playLoadAnim() {
 
-    let pageTitle = document.getElementById('page-title');
-    pageTitle = helpers.spanWords(pageTitle)
+    const header = document.querySelector('.intro');
+    const title = helpers.spanWords(header.querySelector('h1'))
+    const subtitle = helpers.spanWords(header.querySelector('p'))
 
     const navbar = document.querySelector('nav');
     const navWidth = navbar.offsetWidth;
@@ -133,8 +133,13 @@ function playLoadAnim() {
         duration: 600
     })
         .add({
-            targets: pageTitle,
+            targets: title,
             translateX: [500, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+        })
+        .add({
+            targets: subtitle,
             opacity: [0, 1],
             delay: anime.stagger(200),
         })
