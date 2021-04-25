@@ -194,7 +194,7 @@ section {
     width: 100%;
     transition: left 0.5s, opacity 0.5s;
     border-radius: $border-rounding 0 0 $border-rounding;
-    padding: 2em;
+    padding: 5vh 5vw;
     z-index: 0;
     overflow-y: scroll;
     overflow-x: clip;
@@ -270,10 +270,10 @@ section {
     overflow-x: scroll;
     max-height: 300px;
     width: 100%;
-
 }
 
 .horizontal-scroll {
+    min-width: 300px;
     position: relative;
     width: 100%;
     z-index: 3;
@@ -288,7 +288,11 @@ section {
         position: absolute;
         top: 50%;
         width: auto;
-        transition: all 0.5s; // align-self: flex-end;
+        transition: all 0.5s;
+
+         @media screen and (max-width: $tablet) {
+            display: none;
+        }
     }
     .scroll-left {
         left: -25px;
@@ -300,7 +304,6 @@ section {
 
 .scrollable {
     scroll-behavior: smooth;
-
 }
 
 .repo {
@@ -328,7 +331,8 @@ section {
 }
 
 .icon {
-    &:hover::after, &:hover::before {
+    &:hover::after,
+    &:hover::before {
         transition: all 0.2s;
         transform: scale(1.2);
     }
