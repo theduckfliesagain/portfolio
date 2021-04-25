@@ -3,3 +3,6 @@ node_modules
 bundle.js
 scripts/sass.sh
 **/*.css.map
+.env
+# Local Netlify folder
+.netlify
