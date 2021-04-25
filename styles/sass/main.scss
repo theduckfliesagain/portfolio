@@ -45,6 +45,7 @@ body,
 header {
     position: absolute;
     left: 10%;
+    top: 10%;
 }
 
 body.no-anim * {
@@ -214,6 +215,7 @@ nav {
 main {
     grid-column: 1;
     background-color: rgba(131, 131, 131, 0.034);
+    backdrop-filter: blur(2px);
     position: relative;
     clip-path: inset(0px -2px);
     border-radius: $border-rounding 0 0 $border-rounding;
