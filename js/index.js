@@ -1,3 +1,4 @@
+const anime = require('animejs');
 const helpers = require('./helpers');
 const github = require('./github');
 
