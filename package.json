@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "browserify ./js/index.js -o bundle.js",
-    "netdev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"http-server\" ",
+    "netdev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"sass --watch ./styles/sass:./styles/css --style compressed\" \"http-server\" ",
     "dev": "concurrently \"watchify ./js/index.js -o bundle.js\" \"sass --watch ./styles/sass:./styles/css --style compressed\" \"python -m http.server\" \"start http://localhost:8000\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
