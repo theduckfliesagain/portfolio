@@ -25,6 +25,7 @@
     "luxon": "^1.26.0",
     "modern-normalize": "^1.0.0",
     "node-fetch": "^2.6.1",
+    "particles.js": "^2.0.0",
     "sass": "^1.32.11"
   },
   "devDependencies": {
