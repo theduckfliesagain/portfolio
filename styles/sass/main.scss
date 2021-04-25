@@ -521,13 +521,12 @@ section {
 }
 
 @media only screen and (max-width: $tablet) {
-    .root {
+    #root {
         align-items: flex-end;
     }
     .container {
         width: 90vw;
         height: 90vh;
-        bottom: 0;
         grid-template-columns: none;
         grid-template-rows: 1fr 100px;
     }
