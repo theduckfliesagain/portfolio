@@ -51,6 +51,9 @@ header {
 body.no-anim * {
     transition: none !important;
     animation: none !important;
+    #particles-js {
+        display: none;
+    }
 }
 
 #page-title {
