@@ -97,6 +97,9 @@ function loadPage() {
     const userTheme = window.matchMedia('(prefers-color-scheme: dark').matches;
     document.body.className = userTheme ? "dark" : "light";
 
+    const userMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(userMotion) document.body.classList.toggle("no-anim");
+
     renderStars();
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
     !visited && playLoadAnim();
