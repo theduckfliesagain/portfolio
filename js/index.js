@@ -4,11 +4,12 @@ const github = require('./github');
 
 loadPage()
 function loadPage() {
-    
+
     const userTheme = window.matchMedia('(prefers-color-scheme: dark').matches;
-    const userMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.body.className = userTheme ? "dark" : "light";
-    document.body.classList.add(userMotion ? "no-anim" : "");
+
+    const userMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(userMotion) document.body.classList.toggle("no-anim");
 
     renderStars();
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
