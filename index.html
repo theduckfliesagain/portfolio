@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, 
+    width=device-width, initial-scale=1.0, 
+    minimum-scale=1.0, maximum-scale=1.0, 
+    user-scalable=no">
     <meta name="theme-color" content="#0c0c0c" />
     <meta name="description"
         content="The portfolio of developer Rishi Bhugobaun. Learn about my skills and recent projects.">
     <!-- STYLES -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
     <link rel="stylesheet" href="./styles/css/main.css">
     <!-- ICONS -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/6180fcdf0c.js" crossorigin="anonymous"></script>
+    <script defer src="./node_modules/particles.js/particles.js"></script>
     <script defer src="bundle.js"></script>
+    
     <title>Rishi B - Portfolio</title>
 </head>
 
@@ -34,36 +38,39 @@
             </div>
         </div>
 
-        <div class="stars">
-
-        </div>
+        <div id="particles-js" class="stars"></div>
 
         <div class="container">
             <main>
                 <header class="intro">
                     <h1 id="page-title">Hi, <br> I'm Rishi</h1>
+                    <p> Fullstack developer in training. </p>
+                    <div class="dynamic hidden">
+                        <label for="prog">Computer nerd status</label>
+                        <progress id="prog" value="86" max="100">x86</progress>
+                    </div>
+                   
                 </header>
 
                 <section class="about">
                     <h2>A bit about me</h2>
                     <p>
-                        Hey there! I'm a physics graduate who loves learning new technologies. I'm currently training to
+                        Hey there! I'm a recent physics graduate who loves learning new technologies. I'm currently training to
                         be a full stack developer with futureproof, where I've been learning things like Javascript, SQL
-                        and NoSQL Databases, React and lots of others.
+                        and NoSQL Databases, React and more.
                     </p>
                     <br>
                     <p>
                         Other interests of mine include creating visual effects for my (ridiculous) short films, and
                         anything to do with space - science missions, industry developments, and of course sci-fi films,
-                        tv
-                        and books!
+                        tv and books!
                     </p>
                 </section>
 
                 <section class="skills">
                     <h2>Skills</h2>
                     <p>
-                        I'm always looking to learn new things to widen my skillset, but here are some of software and
+                        I'm always looking to learn new things to widen my skillset, but here are some of the software and
                         technologies I've had experience with (programming and otherwise!).
                     </p>
                     <br>

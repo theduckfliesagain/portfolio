@@ -11,7 +11,8 @@ function loadPage() {
     const userMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(userMotion) document.body.classList.toggle("no-anim");
 
-    renderStars();
+    // renderStars();
+    renderPoly()
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
     !visited && playLoadAnim();
     renderSection();
@@ -111,10 +112,17 @@ function renderStars() {
 
 }
 
+function renderPoly() {
+    window.particlesJS.load('particles-js', './js/particles.json', function() {
+        console.log('loaded');
+      });
+}
+
 function playLoadAnim() {
 
-    let pageTitle = document.getElementById('page-title');
-    pageTitle = helpers.spanWords(pageTitle)
+    const header = document.querySelector('.intro');
+    const title = helpers.spanWords(header.querySelector('h1'))
+    const subtitle = helpers.spanWords(header.querySelector('p'))
 
     const navbar = document.querySelector('nav');
     const navWidth = navbar.offsetWidth;
@@ -125,8 +133,13 @@ function playLoadAnim() {
         duration: 600
     })
         .add({
-            targets: pageTitle,
+            targets: title,
             translateX: [500, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+        })
+        .add({
+            targets: subtitle,
             opacity: [0, 1],
             delay: anime.stagger(200),
         })
