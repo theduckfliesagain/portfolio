@@ -1,0 +1,21 @@
+[dev]
+framework = "#custom"
+command = "npm run netdev"
+publish = "/"
+port = 8888
+targetPort = 8080
+autoLaunch = false
+
+[[redirects]]
+from = "/api*"
+status = 200
+to = "/.netlify/functions/:splat"
+
+[[redirects]]
+from = "/*"
+status = 200
+to = "/index.html"
+
+[functions]
+directory = "/js/functions"
+

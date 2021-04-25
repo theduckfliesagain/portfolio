@@ -15,6 +15,7 @@ $tablet: 768px;
 @mixin custom-scrollbar() {
     &::-webkit-scrollbar {
         width: 5px;
+        height: 5px;
     }
     &::-webkit-scrollbar-track {
         background: #00000000;
@@ -39,7 +40,9 @@ $tablet: 768px;
     padding: 0;
 }
 
-html, body {
+html,
+body,
+#root {
     overflow: hidden;
     min-height: 100%;
 }
@@ -49,8 +52,8 @@ header {
     left: 10%;
 }
 
-body.no-anim *{
-    transition:none !important;
+body.no-anim * {
+    transition: none !important;
     animation: none !important;
 }
 
@@ -81,6 +84,12 @@ body.no-anim *{
     }
 }
 
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 .menu {
     position: absolute;
     right: 2%;
@@ -97,19 +106,14 @@ body.no-anim *{
         padding: 10px;
         position: relative;
         right: 0;
-        border: none;
-        outline: none;
         font-size: 30px;
-        cursor: pointer;
-        
+
         &:hover {
             transform: scale(1.2);
         }
         &.rotate {
             transform: rotate(180deg);
         }
-
-
     }
 }
 
@@ -142,9 +146,6 @@ nav {
         padding: 1em;
         font-size: 100%;
         text-align: center;
-        outline: none;
-        border: none;
-        cursor: pointer;
         /* z-index: 1; */
 
         &:first-child {
@@ -196,7 +197,7 @@ section {
     padding: 2em;
     z-index: 0;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-size: 0.8em;
     line-height: 1.5em;
 
@@ -221,7 +222,8 @@ section {
     /* position: absolute; */
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .item {
@@ -234,7 +236,7 @@ section {
     border-radius: $border-rounding;
     box-shadow: 0 0 8px 4px rgb(0, 0, 0, 0.1);
     padding: $item-font-size;
-    margin: 1em auto;
+    margin: 1em 0;
 
     &.grow {
         flex-grow: 1;
@@ -245,7 +247,7 @@ section {
         margin-bottom: 0.5em;
     }
 
-    > p {
+    p {
         // line-height: 1em;
         vertical-align: middle;
         font-size: $item-font-size;
@@ -258,13 +260,100 @@ section {
     }
 }
 
-.github {
-    &::after {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 900;
-        content: "\f09b";
-        float: right;
+.repos {
+    @include custom-scrollbar();
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-y: clip;
+    overflow-x: scroll;
+    max-height: 300px;
+    width: 100%;
+
+}
+
+.horizontal-scroll {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    // overflow: clip;
+    .scroll-left,
+    .scroll-right {
+        flex: none;
+        z-index: 4;
+        flex: none;
+        background: none;
         color: white;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        transition: all 0.5s; // align-self: flex-end;
+    }
+    .scroll-left {
+        left: -25px;
+    }
+    .scroll-right {
+        right: -25px;
+    }
+}
+
+.scrollable {
+    scroll-behavior: smooth;
+
+}
+
+.repo {
+    flex: 0 auto;
+    min-width: fit-content;
+
+    h3 {
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+    }
+    p {
+        max-width: 400px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &.error {
+        flex: 1;
+        width: 100%;
+        a {
+            color: white;
+        }
+    }
+}
+
+.icon {
+    &:hover::after, &:hover::before {
+        transition: all 0.2s;
+        transform: scale(1.2);
+    }
+    &::after {
+        margin-left: 10px;
+    }
+
+    &.github {
+        &::after {
+            font-family: "Font Awesome 5 Brands";
+            font-weight: 900;
+            content: "\f09b";
+            float: right;
+            color: white;
+        }
+    }
+
+    &.ext-link {
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f35d";
+            float: right;
+            color: white;
+        }
     }
 }
 

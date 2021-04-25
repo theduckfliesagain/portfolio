@@ -1,4 +1,6 @@
+const anime = require('animejs');
 const helpers = require('./helpers');
+const github = require('./github');
 
 loadPage()
 function loadPage() {
@@ -11,10 +13,12 @@ function loadPage() {
     !visited && playLoadAnim();
     renderSection();
 
+    github.getRepos();
     document.cookie = "visited=true;SameSite=Lax"
 
     const navbar = document.querySelector('nav');
     const menu = document.querySelector(".menu");
+    const horizontalScroll = document.querySelector(".horizontal-scroll");
 
     menu.addEventListener('click', (e) => {
         const target = e.target;
@@ -33,6 +37,37 @@ function loadPage() {
         }
     })
 
+    const repoSection = document.querySelector(".repos");
+    let direction;
+
+    let scrollObserver = new IntersectionObserver((entries, observer) => {
+        // check which divs are intersecting
+        const intersecting = entries.filter(entry => {
+            return entry.intersectionRatio > 0 && entry.intersectionRatio < 1
+        });
+        // get the intersecting div depending on the click direction
+        const target = direction === 1
+            ? intersecting[intersecting.length - 1].target
+            : intersecting[0].target
+        // calculate scroll offset to get to center of next div
+        const scroll = target.offsetLeft + target.offsetWidth/2 - observer.root.offsetWidth/2;
+
+        observer.root.scrollLeft = scroll;
+        observer.disconnect();
+    }, { root: repoSection })
+
+
+    horizontalScroll.addEventListener('click', (e) => {
+        const target = e.target;
+        const scrollable = horizontalScroll.querySelector(".scrollable");
+
+        // get child divs (repos)
+        [...scrollable.children].forEach(child => { scrollObserver.observe(child) })
+
+        direction = target.classList.contains('scroll-right') ? 1 :
+                    target.classList.contains('scroll-right') ? -1 : 0
+    })
+
     // Update URL hash
     navbar.addEventListener('click', (e) => {
         const selectedBtn = e.target instanceof HTMLButtonElement
@@ -42,10 +77,10 @@ function loadPage() {
         window.location.hash = selectedBtn.classList.contains("active")
             ? "" : selectedBtn.classList[0];
     })
+
     // Open/close sections based on has change
     window.addEventListener('hashchange', (e) => {
         renderSection();
-
     })
 }
 
