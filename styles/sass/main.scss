@@ -29,6 +29,45 @@ $tablet: 768px;
     }
 }
 
+@mixin custom-progressbar() {
+    progress[value] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+
+        flex: 1;
+        margin-left: 20px;
+        vertical-align: middle;
+        height: 1em;
+        
+        animation: progressBar 3s ease-in-out;
+        animation-fill-mode:both; 
+
+        &::-webkit-progress-bar {
+            border-radius: 50px;
+            left: 5px;
+            @include theme(){
+                background: t($bg-ag);
+            }
+        }
+
+        &::-webkit-progress-value  {
+            @include theme(){
+                background: t($bg-3);
+            }
+            border-radius: 100px;
+        }
+
+        
+    }
+
+    @keyframes progressBar {
+        0% { width: 0; }
+        100% { width: 100%; }
+      }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -44,8 +83,37 @@ body,
 
 header {
     position: absolute;
-    left: 10%;
-    top: 10%;
+    padding: 10vh 10vw;
+    // left: 10%;
+    // top: 10%;
+
+    > h1 {
+        display: block;
+        font-size: 8vh;
+        font-family: Merriweather, serif;
+        > span {
+            display: inline-block;
+        }
+    }
+
+    > p {
+        margin: 1em 0;
+    }
+}
+
+.dynamic {
+    margin: 50px 0;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 0.6em;
+    > label {
+        font-size: 1rem;
+    }
+    @include custom-progressbar();
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 body.no-anim * {
@@ -53,16 +121,6 @@ body.no-anim * {
     animation: none !important;
     #particles-js {
         display: none;
-    }
-}
-
-#page-title {
-    position: absolute;
-    font-size: 6rem;
-    font-family: Merriweather, serif;
-
-    > span {
-        display: inline-block;
     }
 }
 
@@ -104,7 +162,7 @@ button {
         display: inline-block;
         border-radius: 1000px;
         padding: 10px;
-        
+
         @include theme() {
             background-color: t($bg-1);
         }
@@ -115,10 +173,10 @@ button {
             }
             -webkit-tap-highlight-color: transparent;
             background: none;
-            vertical-align:middle;
+            vertical-align: middle;
             transition: all 0.2s;
             font-size: 30px;
-    
+
             &:hover {
                 transform: scale(1.2);
                 & + .tooltip {
@@ -132,8 +190,6 @@ button {
             }
         }
     }
-
-  
 }
 
 .tooltip {
@@ -254,7 +310,7 @@ section {
 
     > h2 {
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     > p {

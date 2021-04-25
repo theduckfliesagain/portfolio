@@ -2,6 +2,7 @@ $bg-1: 'bg-primary';
 $bg-2: 'bg-secondary';
 $bg-3: 'bg-tertiary';
 $bg-grey: 'bg-grey';
+$bg-ag: 'bg-alt-grey';
 $text-color: 'text-color';
 $text-2: 'text-secondary';
 
@@ -13,7 +14,8 @@ $themes: (
         bg-primary: rgb(12, 12, 12),
         bg-secondary: #180e61,
         bg-tertiary: #241692,
-        bg-grey: rgb(37, 37, 37)
+        bg-grey: rgb(37, 37, 37),
+        bg-alt-grey:  rgb(26, 26, 26)
     ),
     light: (
         text-color: rgb(0, 0, 0),
@@ -21,7 +23,8 @@ $themes: (
         bg-primary: rgb(233, 233, 233),
         bg-secondary: #10199b,
         bg-tertiary: #1829be,
-        bg-grey: rgb(37, 37, 37)
+        bg-grey: rgb(37, 37, 37),
+        bg-alt-grey:  rgb(156, 156, 156)
     ),
 );
 
