@@ -50,7 +50,7 @@ function createRepoCard(repo) {
     repoCard.innerHTML = (
         `
             <h3>${repo.name}
-                <a class="icon github" href="${repo.html_url}" target="_blank"></a>
+                <a class="icon github" href="${repo.html_url}" target="_blank" aria-label="Go to the ${repo.name} Github page" rel="noreferrer"></a>
                 ${repo.homepage ? `<a class="icon ext-link" href="${repo.homepage}" target="_blank"></a>` : ""} 
             </h3>
             

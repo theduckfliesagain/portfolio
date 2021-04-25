@@ -23,6 +23,7 @@
     "animejs": "^3.2.1",
     "browserify": "^17.0.0",
     "luxon": "^1.26.0",
+    "modern-normalize": "^1.0.0",
     "node-fetch": "^2.6.1",
     "sass": "^1.32.11"
   },
