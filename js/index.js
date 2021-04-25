@@ -115,7 +115,7 @@ function renderStars() {
 
 function renderPoly() {
     window.particlesJS.load('particles-js', './js/particles.json', function() {
-        console.log('callback - particles-js config loaded');
+        console.log('loaded');
       });
 }
 
