@@ -1,3 +1,4 @@
+let particlesJS;
 const anime = require('animejs');
 const helpers = require('./helpers');
 const github = require('./github');
@@ -11,7 +12,8 @@ function loadPage() {
     const userMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(userMotion) document.body.classList.toggle("no-anim");
 
-    renderStars();
+    // renderStars();
+    renderPoly()
     let visited = document.cookie.split(';').some(c => c.includes("visited=true"));
     !visited && playLoadAnim();
     renderSection();
@@ -109,6 +111,12 @@ function renderStars() {
         stars.appendChild(star.cloneNode(true));
     }
 
+}
+
+function renderPoly() {
+    window.particlesJS.load('particles-js', './js/particles.json', function() {
+        console.log('callback - particles-js config loaded');
+      });
 }
 
 function playLoadAnim() {
