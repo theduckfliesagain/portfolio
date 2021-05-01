@@ -30,42 +30,38 @@ $tablet: 768px;
 }
 
 @mixin custom-progressbar() {
-    progress[value] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: none;
-
+    .progress {
+        min-width: 50%;
         flex: 1;
-        margin-left: 20px;
         vertical-align: middle;
         height: 1em;
+        border-radius: 50px;
+        width: 100%;
+        clip-path: inset(0px -1000px 0px 0px);
+        
 
-        animation: progressBar 3s ease-in-out;
-        animation-fill-mode: both;
-
-        &::-webkit-progress-bar {
-            border-radius: 50px;
-            left: 5px;
-            @include theme() {
-                background: t($bg-ag);
-            }
+        @include theme() {
+            background: t($bg-ag);
         }
 
-        &::-webkit-progress-value {
+        > .value {
+            
+            display: inline-block;
+            height: 100%;
             @include theme() {
                 background: t($bg-3);
             }
+            transition: width 2s;
             border-radius: 100px;
         }
-    }
 
-    @keyframes progressBar {
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 100%;
+        &::after {
+            color: white;
+            position: absolute;     
+            transition: content 0.2s;
+            font-size: 0.9em;
+            margin-left: -50px;
+            content: attr(data-value);
         }
     }
 }
@@ -100,6 +96,7 @@ body {
 
 header {
     position: absolute;
+    width: 100%;
     padding: 10vh 10vw;
     // left: 10%;
     // top: 10%;
@@ -118,14 +115,14 @@ header {
     }
 }
 
-.dynamic {
+#dynamic-progress {
+    vertical-align: middle;
     margin: 50px 0;
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     font-size: 0.6em;
-    > label {
-        font-size: 1rem;
-    }
+    p {margin-right: 1em}
     @include custom-progressbar();
 }
 
