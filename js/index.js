@@ -2,6 +2,7 @@ require('particles.js/particles')
 const anime = require('animejs');
 const helpers = require('./helpers');
 const github = require('./github');
+const { renderProgress } = require('./progress');
 
 loadPage()
 function loadPage() {
@@ -85,6 +86,7 @@ function loadPage() {
 
     // Open/close sections based on has change
     window.addEventListener('hashchange', (e) => {
+        if(window.location.hash === '') renderProgress();
         renderSection();
     })
 }
