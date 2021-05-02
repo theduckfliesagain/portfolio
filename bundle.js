@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const { DateTime } = require('luxon');
 
-const featuredProjects = ["habite", "consoul.log"]
+const featuredProjects = ["habite", "consoul.log", "quizapp"]
 
 async function getRepos() {
     try {
@@ -15,7 +15,9 @@ async function getRepos() {
                 // has a description
                 repo.description !== null &&
                 // not already featured
-                !featuredProjects.includes(repo.name)
+                !featuredProjects.find(feat => {
+                    return repo.name.toLowerCase().includes(feat) || repo.description.toLowerCase().includes(feat);
+                })
             )
         })
     
@@ -47,9 +49,10 @@ function createRepoCard(repo) {
 
     const repoCard = document.createElement('div');
     repoCard.className = "item repo";
+
     repoCard.innerHTML = (
         `
-            <h3>${repo.name}
+            <h3>${repo.name.split('-').join(' ')}
                 <a class="icon github" href="${repo.html_url}" target="_blank" aria-label="Go to the ${repo.name} Github page" rel="noreferrer"></a>
                 ${repo.homepage ? `<a class="icon ext-link" href="${repo.homepage}" target="_blank"></a>` : ""} 
             </h3>

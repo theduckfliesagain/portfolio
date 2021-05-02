@@ -369,6 +369,11 @@ section {
         font-size: $item-font-size;
         padding: 0.2em;
 
+        i {
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
         img {
             vertical-align: middle;
             float: "left";
@@ -425,11 +430,15 @@ section {
 .repo {
     flex: 0 auto;
     min-width: fit-content;
+    overflow-y: auto;
+
+    @include custom-scrollbar();
 
     h3 {
         width: 100%;
         display: inline-block;
         white-space: nowrap;
+        text-transform: capitalize;
     }
     p {
         max-width: 400px;
