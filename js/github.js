@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon');
 
-const featuredProjects = ["habite", "consoul.log"]
+const featuredProjects = ["habite", "consoul.log", "quizapp"]
 
 async function getRepos() {
     try {
@@ -14,7 +14,9 @@ async function getRepos() {
                 // has a description
                 repo.description !== null &&
                 // not already featured
-                !featuredProjects.includes(repo.name)
+                !featuredProjects.find(feat => {
+                    return repo.name.toLowerCase().includes(feat) || repo.description.toLowerCase().includes(feat);
+                })
             )
         })
     
@@ -46,9 +48,10 @@ function createRepoCard(repo) {
 
     const repoCard = document.createElement('div');
     repoCard.className = "item repo";
+
     repoCard.innerHTML = (
         `
-            <h3>${repo.name}
+            <h3>${repo.name.split('-').join(' ')}
                 <a class="icon github" href="${repo.html_url}" target="_blank" aria-label="Go to the ${repo.name} Github page" rel="noreferrer"></a>
                 ${repo.homepage ? `<a class="icon ext-link" href="${repo.homepage}" target="_blank"></a>` : ""} 
             </h3>
