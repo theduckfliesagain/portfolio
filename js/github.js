@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon');
 
-const featuredProjects = ["habite", "consoul.log", "quizapp"]
+const featuredProjects = ["habite", "consoul.log", "quizapp", "career_app", "theduckfliesagain"]
 
 async function getRepos() {
     try {
